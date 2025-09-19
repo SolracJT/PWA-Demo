@@ -22,8 +22,10 @@
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').catch(console.error);
-        }
+            navigator.serviceWorker.register('sw.js', {scope: './'})
+            .then(() => console.log('SW installed with correct scope'))
+            .catch(console.error);
+            }
     </script>
 </body>
 </html>
